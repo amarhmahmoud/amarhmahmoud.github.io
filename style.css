@@ -49,6 +49,9 @@ header .tagline {
 /* ===== Navigation ===== */
 nav {
   margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;   /* row gap keeps wrapped links clear of the rule below */
   font-family: Helvetica, Arial, sans-serif;
   font-size: 0.85rem;
   text-transform: uppercase;
@@ -58,7 +61,6 @@ nav {
 nav a {
   color: var(--muted);
   text-decoration: none;
-  margin-right: 1.5rem;
   padding-bottom: 0.25rem;
 }
 
@@ -202,6 +204,11 @@ footer nav { margin: 0 0 0.75rem; font-size: 0.75rem; }
 
 /* ===== Small screens ===== */
 @media (max-width: 540px) {
-  nav a { margin-right: 1rem; }
+  /* shrink the type just enough that all five links stay on one line */
+  nav {
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    gap: 0.5rem 0.85rem;
+  }
   header { padding-top: 1.5rem; }
 }
